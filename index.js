@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 // TODO: Create an array of questions for user input
+
 const questions = [
     {
         type: 'input',
@@ -27,10 +28,40 @@ function init() {
   inquirer
     .prompt(questions)
     .then(answers => {
-      const userData = answers;
+      //console.log(answers.title, typeof(answers.title));
+      //let userData = `${answers}`;
+      // console.log(userData, typeof(userData))
+      userData = generateMarkdown(answers);
       writeToFile('projects.md', userData)
       console.log(answers);
     })
+}
+
+function generateMarkdown(answers) {
+  return `
+  #Test
+  # Table of Context
+  - [description] {#description}
+  - ${answers.title}
+  - ${answers.bio}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  Description
+  ##description
+  `
 }
 
 // Function call to initialize app

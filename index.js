@@ -28,7 +28,7 @@ function init() {
     .prompt(questions)
     .then(answers => {
       const userData = answers;
-      writeFile('projects.md', userData)
+      writeToFile('projects.md', userData)
       console.log(answers);
     })
 }

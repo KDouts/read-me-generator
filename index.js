@@ -24,7 +24,7 @@ const questions = [
       },
       {
         type: 'input',
-        message: 'What are the contribution guidelines?',
+        message: 'Who were the contributors?',
         name: 'contrib',
       },
       {
@@ -63,26 +63,38 @@ function init() {
 function generateMarkdown(answers) {
   return `
 # ${answers.title}
+##  1. [ Description. ](#desc)
+##  2. [ Installation. ](#install)
+##  2. [ Usage. ](#usage)
+##  2. [ Contribution. ](#contrib)
+##  2. [ Tests. ](#tese)
+##  2. [ Questions. ](#ques)
 
+<a name="desc"></a>
 ## Description
 ${answers.bio}
 
+<a name="install"></a>
 ## Installation
 ${answers.install}
 
+<a name="usage"></a>
 ## Usage
 ${answers.use}
 
+<a name="contrib"></a>
 ## Contributing
 ${answers.contrib}
 
+<a name="test"></a>
 ## Tests
 ${answers.test}
 
+<a name="ques"></a>
 ## Questions?
-GitHub
+GitHub:
 ${answers.github}
-Email
+Email:
 ${answers.email}
 
 ## License
